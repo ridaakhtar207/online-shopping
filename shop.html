@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop All Products — Bazaar.pk</title>
+  <meta name="description" content="Browse fashion, electronics, home, beauty, sports and groceries. Filter by category, price and rating with cash on delivery across Pakistan.">
+  <meta name="theme-color" content="#054735">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307835c'/%3E%3Cpath d='M20 24h24l2 24H18l2-24Z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M26 24v-3a6 6 0 0 1 12 0v3' fill='none' stroke='%23c3ea7a' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="shop">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Shop</span>
+      </nav>
+
+      <div class="page-head">
+        <div>
+          <h1 id="shopTitle">All products</h1>
+          <p id="shopSubtitle">Everything from lawn suits to laptops — delivered across Pakistan with COD.</p>
+        </div>
+        <span class="head-note" id="shopCountChip">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h13v12H1zM14 9h4l3 3.5V16h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+          Free delivery over Rs 2,500
+        </span>
+      </div>
+
+      <div class="shop-layout">
+        <aside class="filters" id="filters" aria-label="Product filters">
+          <div class="filters-head">
+            <h2>Filters</h2>
+            <button class="clear-filters" type="button" id="clearFilters">Clear all</button>
+          </div>
+
+          <div class="filter-group">
+            <h3>Category</h3>
+            <div class="filter-list" id="categoryFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Max price</h3>
+            <div class="price-readout"><span>Up to</span><strong id="priceReadout">Rs 150,000</strong></div>
+            <label class="sr-only" for="priceRange">Maximum price</label>
+            <input type="range" id="priceRange" min="1000" max="150000" step="500" value="150000">
+            <div class="field-hint" style="margin-top:6px">Rs 1,000 – Rs 150,000</div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Customer rating</h3>
+            <div class="filter-list" id="ratingFilters">
+              <label class="rating-row"><input type="radio" name="rating" value="0" checked> <span>Any rating</span></label>
+              <label class="rating-row"><input type="radio" name="rating" value="4.5"> <span class="stars" aria-hidden="true">★★★★★</span> <span class="and-up">4.5 &amp; up</span></label>
+              <label class="rating-row"><input type="radio" name="rating" value="4"> <span class="stars" aria-hidden="true">★★★★☆</span> <span class="and-up">4.0 &amp; up</span></label>
+              <label class="rating-row"><input type="radio" name="rating" value="3.5"> <span class="stars" aria-hidden="true">★★★☆☆</span> <span class="and-up">3.5 &amp; up</span></label>
+            </div>
+          </div>
+
+          <div class="filter-help">
+            <strong>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h13v12H1zM14 9h4l3 3.5V16h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+              Delivery nationwide
+            </strong>
+            COD in 500+ cities. Free shipping on orders over Rs 2,500.
+          </div>
+        </aside>
+
+        <section class="shop-content" aria-label="Products">
+          <div class="shop-toolbar">
+            <button class="btn btn-outline btn-sm filter-toggle" type="button" id="filterToggle" aria-expanded="false" aria-controls="filters">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              Filters <span id="filterCount" hidden></span>
+            </button>
+            <p class="results-note" id="resultsNote" aria-live="polite">Showing all products</p>
+            <div class="toolbar-right">
+              <label class="sort-label" for="sortSelect">Sort by</label>
+              <select class="sort-select" id="sortSelect">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="rating">Highest rated</option>
+                <option value="discount">Biggest discount</option>
+                <option value="popular">Best selling</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-summary" id="searchSummary" hidden></div>
+          <div class="active-chips" id="activeChips" hidden></div>
+
+          <div class="product-grid" id="shopGrid" aria-live="polite"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/shop.js" defer></script>
+</body>
+</html>

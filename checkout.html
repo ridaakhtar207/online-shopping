@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Bazaar.pk</title>
+  <meta name="description" content="Complete your Bazaar.pk order with cash on delivery, Easypaisa, JazzCash or card.">
+  <meta name="theme-color" content="#054735">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307835c'/%3E%3Cpath d='M20 24h24l2 24H18l2-24Z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M26 24v-3a6 6 0 0 1 12 0v3' fill='none' stroke='%23c3ea7a' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="checkout">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="cart.html">Cart</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Checkout</span>
+      </nav>
+
+      <div class="page-head">
+        <div>
+          <h1>Checkout</h1>
+          <p>A few details and your order is on its way. No account needed.</p>
+        </div>
+        <span class="head-note">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          Encrypted &amp; secure
+        </span>
+      </div>
+
+      <div class="checkout-steps" aria-label="Checkout progress">
+        <span class="checkout-step is-done"><span class="step-num">✓</span> Cart</span>
+        <span class="step-line" aria-hidden="true"></span>
+        <span class="checkout-step is-active"><span class="step-num">2</span> Delivery details</span>
+        <span class="step-line" aria-hidden="true"></span>
+        <span class="checkout-step"><span class="step-num">3</span> Payment</span>
+      </div>
+
+      <div class="empty-state" id="checkoutEmpty" hidden style="margin-bottom:60px">
+        <div class="empty-emoji">🧺</div>
+        <h2>Nothing to check out yet</h2>
+        <p>Your cart is empty. Add a few products and come back — we'll keep your details ready.</p>
+        <a class="btn btn-primary" href="shop.html">Browse products</a>
+      </div>
+
+      <div class="checkout-layout" id="checkoutLayout">
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <div class="form-card">
+            <div class="form-card-head">
+              <span class="num">1</span>
+              <div>
+                <h2>Contact details</h2>
+                <p>So we can update you about your order.</p>
+              </div>
+              <span class="head-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              </span>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="fullName" name="name" placeholder="e.g. Ayesha Khan" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Mobile number <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="0300 1234567" autocomplete="tel" inputmode="tel" pattern="03[0-9]{2}[ -]?[0-9]{7}" required>
+                <span class="field-hint">11-digit mobile number (03XX XXXXXXX).</span>
+              </div>
+              <div class="field full">
+                <label for="email">Email <span class="muted" style="font-weight:500">(optional)</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                <span class="field-hint">Your invoice and tracking link will be sent here.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-card-head">
+              <span class="num">2</span>
+              <div>
+                <h2>Delivery address</h2>
+                <p>Where should the rider meet you?</p>
+              </div>
+              <span class="head-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </span>
+            </div>
+            <div class="field-grid">
+              <div class="field full">
+                <label for="address">Street address <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="address" name="address" placeholder="House / flat, street, area" autocomplete="street-address" required>
+              </div>
+              <div class="field">
+                <label for="city">City <span class="req" aria-hidden="true">*</span></label>
+                <select id="city" name="city" autocomplete="address-level2" required>
+                  <option value="">Select your city</option>
+                  <option>Karachi</option>
+                  <option>Lahore</option>
+                  <option>Islamabad</option>
+                  <option>Rawalpindi</option>
+                  <option>Faisalabad</option>
+                  <option>Multan</option>
+                  <option>Peshawar</option>
+                  <option>Quetta</option>
+                  <option>Sialkot</option>
+                  <option>Gujranwala</option>
+                  <option>Hyderabad</option>
+                  <option>Gilgit</option>
+                  <option>Other city</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="province">Province</label>
+                <select id="province" name="province" autocomplete="address-level1">
+                  <option value="">Select province</option>
+                  <option>Punjab</option>
+                  <option>Sindh</option>
+                  <option>Khyber Pakhtunkhwa</option>
+                  <option>Balochistan</option>
+                  <option>Gilgit-Baltistan</option>
+                  <option>Azad Jammu &amp; Kashmir</option>
+                  <option>Islamabad Capital Territory</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="postal">Postal code <span class="muted" style="font-weight:500">(optional)</span></label>
+                <input type="text" id="postal" name="postal" placeholder="54000" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code">
+              </div>
+              <div class="field">
+                <label for="landmark">Nearby landmark <span class="muted" style="font-weight:500">(optional)</span></label>
+                <input type="text" id="landmark" name="landmark" placeholder="e.g. near Liberty Market">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-card-head">
+              <span class="num">3</span>
+              <div>
+                <h2>Delivery speed</h2>
+                <p>Choose how fast you need it.</p>
+              </div>
+              <span class="head-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h13v12H1zM14 9h4l3 3.5V16h-7z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+              </span>
+            </div>
+            <div class="radio-stack" id="deliveryOptions">
+              <label class="radio-card is-selected">
+                <input type="radio" name="delivery" value="standard" checked>
+                <span class="radio-card-body"><strong>Standard delivery</strong><span>2–4 working days across Pakistan</span></span>
+                <span class="price-tag" id="standardPrice">Free</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="delivery" value="express">
+                <span class="radio-card-body"><strong>Express delivery</strong><span>1–2 working days in Karachi, Lahore, Islamabad &amp; Rawalpindi</span></span>
+                <span class="price-tag" id="expressPrice">Rs 399</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-card-head">
+              <span class="num">4</span>
+              <div>
+                <h2>Payment method</h2>
+                <p>Pay how you prefer — all options are secure.</p>
+              </div>
+              <span class="head-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              </span>
+            </div>
+            <div class="radio-stack" id="paymentOptions">
+              <label class="radio-card is-selected">
+                <input type="radio" name="payment" value="cod" checked>
+                <span class="pay-logo cod">COD</span>
+                <span class="radio-card-body"><strong>Cash on delivery</strong><span>Pay the rider in cash when your order arrives</span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="easypaisa">
+                <span class="pay-logo ep">EP</span>
+                <span class="radio-card-body"><strong>Easypaisa wallet</strong><span>A payment request is sent to your mobile number</span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="jazzcash">
+                <span class="pay-logo jc">JC</span>
+                <span class="radio-card-body"><strong>JazzCash wallet</strong><span>A payment request is sent to your mobile number</span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="card">
+                <span class="pay-logo card">CARD</span>
+                <span class="radio-card-body"><strong>Debit / credit card</strong><span>Visa or Mastercard · 3D secure</span></span>
+              </label>
+            </div>
+
+            <div class="card-fields" id="cardFields" hidden>
+              <div class="field full">
+                <label for="cardNumber">Card number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19" autocomplete="cc-number">
+              </div>
+              <div class="field full">
+                <label for="cardName">Name on card</label>
+                <input type="text" id="cardName" name="cardName" placeholder="AYESHA KHAN" autocomplete="cc-name">
+              </div>
+              <div class="field">
+                <label for="cardExpiry">Expiry</label>
+                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" inputmode="numeric" maxlength="5" autocomplete="cc-exp">
+              </div>
+              <div class="field">
+                <label for="cardCvv">CVV</label>
+                <input type="text" id="cardCvv" name="cardCvv" placeholder="123" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+              </div>
+            </div>
+
+            <div class="demo-note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span><strong>Demo checkout:</strong> no real payment is processed and no card details are stored. Cash on delivery works end-to-end.</span>
+            </div>
+          </div>
+        </form>
+
+        <aside class="checkout-summary" id="checkoutSummary" aria-label="Your order">
+          <h2>Your order</h2>
+          <p class="summary-sub" id="summaryCount">0 items</p>
+          <div class="checkout-items" id="checkoutItems"></div>
+
+          <div class="summary-rows">
+            <div class="summary-row"><span>Subtotal</span><span id="coSubtotal">Rs 0</span></div>
+            <div class="summary-row discount" id="coDiscountRow" hidden><span>Discount</span><span id="coDiscount">-Rs 0</span></div>
+            <div class="summary-row"><span>Delivery</span><span id="coShipping">Free</span></div>
+          </div>
+          <div class="summary-total"><span>Total</span><strong id="coTotal">Rs 0</strong></div>
+          <p class="summary-tax" id="etaNote">Estimated delivery in 2–4 working days.</p>
+
+          <button class="btn btn-primary btn-block btn-lg place-order-btn" type="submit" form="checkoutForm" id="placeOrderBtn">
+            Place order · <span id="placeOrderTotal">Rs 0</span>
+          </button>
+          <p class="terms-note">By placing this order you agree to our <a href="#" data-demo="Terms of service">terms of service</a> and <a href="#" data-demo="Returns policy">returns policy</a>.</p>
+          <div class="summary-payments">
+            <p>Payments handled securely</p>
+            <div class="pay-logos">
+              <span>COD</span><span>Easypaisa</span><span>JazzCash</span><span>Visa</span><span>Mastercard</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/checkout.js" defer></script>
+</body>
+</html>
